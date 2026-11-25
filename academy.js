@@ -3,7 +3,7 @@
   var S=document.currentScript; if(window.__iuaAcct) return; window.__iuaAcct=1;
   var slug=(S&&S.getAttribute('data-slug'))||(location.pathname.split('/')[1]||'site');
   var API='https://ttbhkelmmnhoohucewda.supabase.co/rest/v1/rpc/',KEY='sb_publishable_dtIO-b76YDbgp6RNCr_mjA_LZLdc1Z8';
-  var HUB='https://capwv.github.io/SAMS-Compass/',KA='iua-acct',KB='iua-anon';
+  var HUB='https://capwv.github.io/SAMS-Hub/',KA='iua-acct',KB='iua-anon';
   var setRaw=Storage.prototype.setItem;
   function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
   function put(k,v){try{setRaw.call(localStorage,k,v)}catch(e){}}
