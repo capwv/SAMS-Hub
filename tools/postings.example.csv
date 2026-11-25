@@ -1,0 +1,5 @@
+# job,level,min,max,city,date,url
+# مثال (أرقام تجريبية، متنسخهاش كأنها حقيقية):
+# dataanalyst,junior,12000,15000,Cairo,2026-11-18,https://wuzzuf.net/jobs/p/example1
+# dataanalyst,senior,45000,55000,Cairo,2026-11-18,https://wuzzuf.net/jobs/p/example2
+job,level,min,max,city,date,url

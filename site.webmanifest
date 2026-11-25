@@ -1,0 +1,16 @@
+{
+  "name": "SAMS Compass - دليل تخصصات أكاديمية السادات فرع أسيوط",
+  "short_name": "SAMS Compass",
+  "description": "مجالات الشغل والشهادات والتدريب والمرتبات التقريبية لكل تخصص.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#070b12",
+  "theme_color": "#070b12",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

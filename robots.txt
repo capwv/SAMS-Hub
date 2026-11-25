@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://capwv.github.io/SAMS-Compass/sitemap.xml

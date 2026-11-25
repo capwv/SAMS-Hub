@@ -1,0 +1,111 @@
+SAMS Compass - حالة توثيق المرتبات: 86 من 89
+المفتاح (للاستخدام في data/sources.js) | الحالة | الوظيفة | المرتب
+
+# نظم المعلومات الإدارية
+dataanalyst | موثّق | محلل بيانات Data Analyst | 11–23 ألف مبتدئ · 35–46 ألف سينيور
+bipowerbideveloper | موثّق | مطور ذكاء أعمال BI / Power BI Developer | 12–25 ألف مبتدئ · 39–53 ألف سينيور
+businesssystemsanalyst | موثّق | محلل أعمال ونظم Business & Systems Analyst | 12–24 ألف مبتدئ · 35–47 ألف سينيور
+erpimplementationconsultant | موثّق | استشاري نظم المؤسسات وتطبيق الأنظمة ERP & Implementation Consultant | 14–28 ألف مبتدئ · 41–55 ألف سينيور
+productowneritprojectmanager | موثّق | مسؤول منتج ومدير مشروعات تقنية Product Owner / IT Project Manager | 15–34 ألف مبتدئ · 53–73 ألف سينيور
+misofficer | موثّق | أخصائي نظم معلومات إدارية MIS Officer | 12–17 ألف مبتدئ · 22–27 ألف سينيور
+itauditordatagovernance | موثّق | مدقق نظم وحوكمة بيانات IT Auditor & Data Governance | 13–21 ألف مبتدئ · 29–36 ألف سينيور
+uiuxdesigner | موثّق | مصمم تجربة وواجهات المستخدم UI/UX Designer | 13–28 ألف مبتدئ · 44–59 ألف سينيور
+lowcodewebpowerplatform | موثّق | مطور تطبيقات ويب وحلول Low-Code (Web & Power Platform) | 10–23 ألف مبتدئ · 36–49 ألف سينيور
+qasoftwaretester | موثّق | مختبر جودة برمجيات QA & Software Tester | 12–22 ألف مبتدئ · 31–40 ألف سينيور
+cybersecurityanalyst | موثّق | محلل أمن سيبراني Cybersecurity Analyst | 10–23 ألف مبتدئ · 36–48 ألف سينيور
+dbasystemsadmin | موثّق | مدير قواعد بيانات ونظم DBA & Systems Admin | 12–21 ألف مبتدئ · 30–39 ألف سينيور
+
+# المحاسبة
+محاسبعاممالي | موثّق | محاسب عام / مالي | 7–12 ألف مبتدئ · 16–21 ألف سينيور
+costaccountant | موثّق | محاسب تكاليف Cost Accountant | 8–14 ألف مبتدئ · 21–28 ألف سينيور
+taxaccountant | موثّق | محاسب ضرائب Tax Accountant | 13–25 ألف مبتدئ · 37–48 ألف سينيور
+internalauditor | موثّق | مراجع داخلي Internal Auditor | 12–22 ألف مبتدئ · 31–40 ألف سينيور
+externalauditor | موثّق | مراجع خارجي External Auditor | 10–21 ألف مبتدئ · 31–42 ألف سينيور
+governmentaccountant | موثّق | محاسب حكومي Government Accountant | 8–12 ألف مبتدئ · 16–21 ألف سينيور
+fpaanalyst | موثّق | محلل مالي FP&A Analyst | 12–25 ألف مبتدئ · 38–51 ألف سينيور
+erpaccountingconsultant | موثّق | مستشار نظم محاسبية ERP Accounting Consultant | 14–28 ألف مبتدئ · 41–55 ألف سينيور
+remotebookkeeper | موثّق | محاسب ريموت Remote Bookkeeper | 7–12 ألف مبتدئ · 16–21 ألف مع الخبرة
+forensicaccountant | موثّق | محاسب جنائي Forensic Accountant | 10–21 ألف مبتدئ · 31–42 ألف سينيور
+treasuryofficer | موثّق | أخصائي خزينة Treasury Officer | 11–23 ألف مبتدئ · 34–46 ألف سينيور
+projectaccountant | موثّق | محاسب مشروعات ومقاولات Project Accountant | 8–14 ألف مبتدئ · 21–28 ألف سينيور
+ifrsfinancialreporting | موثّق | أخصائي تقارير مالية IFRS Financial Reporting | 16–30 ألف مبتدئ · 44–58 ألف سينيور
+
+# إدارة الموارد البشرية
+recruiter | موثّق | أخصائي توظيف Recruiter | 9–15 ألف مبتدئ · 20–26 ألف سينيور
+hrgeneralist | موثّق | أخصائي شئون عاملين / HR Generalist | 10–12 ألف مبتدئ · 14–17 ألف سينيور
+payrollbenefits | موثّق | أخصائي رواتب ومزايا Payroll & Benefits | 9–18 ألف مبتدئ · 26–34 ألف سينيور
+ldspecialist | موثّق | مسؤول تدريب وتطوير L&D Specialist | 10–17 ألف مبتدئ · 23–30 ألف سينيور
+hranalytics | تقدير تحريري | محلل موارد بشرية HR Analytics | 12–18 ألف مبتدئ · 20–38 ألف سينيور
+techrecruiter | موثّق | أخصائي توظيف تقني Tech Recruiter | 9–15 ألف + عمولات · 20–26 ألف سينيور
+employeerelations | موثّق | أخصائي علاقات عمل Employee Relations | 10–20 ألف مبتدئ · 29–38 ألف سينيور
+employeeexperience | موثّق | أخصائي تجربة الموظف Employee Experience | 10–20 ألف مبتدئ · 29–38 ألف سينيور
+odconsultant | موثّق | مستشار تطوير تنظيمي OD Consultant | 12–22 ألف مبتدئ · 32–43 ألف مستشار
+hrisspecialist | موثّق | أخصائي نظم موارد بشرية HRIS Specialist | 10–20 ألف مبتدئ · 29–38 ألف سينيور
+employerbranding | موثّق | أخصائي علامة صاحب العمل Employer Branding | 10–17 ألف مبتدئ · 25–32 ألف سينيور
+
+# الإدارة العامة والمحلية
+موظفحكوميإدارةمحلية | موثّق | موظف حكومي / إدارة محلية | 10–13 ألف مبتدئ · 17–21 ألف سينيور
+policyanalyst | موثّق | محلل سياسات عامة Policy Analyst | 12–16 ألف مبتدئ · 20–24 ألف سينيور
+egovernment | موثّق | أخصائي حكومة إلكترونية e-Government | 10–14 ألف مبتدئ · 18–22 ألف سينيور
+csr | موثّق | أخصائي مسؤولية مجتمعية CSR | 12–17 ألف مبتدئ · 22–27 ألف سينيور
+publicprocurement | موثّق | أخصائي مشتريات حكومية Public Procurement | 11–20 ألف مبتدئ · 30–39 ألف سينيور
+publicbudgetanalyst | موثّق | محلل ميزانية عامة Public Budget Analyst | 10–14 ألف مبتدئ · 18–22 ألف سينيور
+publicprojectmanager | موثّق | مدير مشروعات عامة Public Project Manager | 11–15 ألف مبتدئ · 20–25 ألف سينيور
+localgovernmentofficer | موثّق | أخصائي إدارة محلية Local Government Officer | 10–13 ألف مبتدئ · 17–21 ألف سينيور
+qualityinstitutionaldevelopment | موثّق | أخصائي جودة وتطوير مؤسسي Quality & Institutional Development | 10–16 ألف مبتدئ · 22–28 ألف سينيور
+ngoprogramofficer | موثّق | منسق برامج منظمات مجتمع مدني NGO Program Officer | 11–15 ألف مبتدئ · 20–25 ألف سينيور
+profficer | موثّق | أخصائي علاقات عامة وإعلام PR Officer | 11–18 ألف مبتدئ · 26–34 ألف سينيور
+mespecialist | موثّق | أخصائي متابعة وتقييم M&E Specialist | 11–15 ألف مبتدئ · 20–25 ألف سينيور
+governmentdataanalyst | موثّق | محلل بيانات حكومية Government Data Analyst | 11–23 ألف مبتدئ · 35–46 ألف سينيور
+
+# إدارة الأعمال – إدارة البنوك
+relationshipofficer | موثّق | موظف خدمة عملاء وعلاقات Relationship Officer | 7–12 ألف مبتدئ · 17–22 ألف سينيور
+creditriskanalyst | موثّق | محلل ائتمان / مخاطر Credit & Risk Analyst | 12–20 ألف مبتدئ · 28–36 ألف سينيور
+bankingoperations | موثّق | أخصائي عمليات بنكية Banking Operations | 9–15 ألف مبتدئ · 20–26 ألف سينيور
+amlcompliance | موثّق | مسؤول امتثال ومكافحة غسل أموال AML Compliance | 10–16 ألف مبتدئ · 22–28 ألف سينيور
+corporatebanker | موثّق | أخصائي تمويل شركات Corporate Banker | 12–19 ألف مبتدئ · 27–34 ألف سينيور
+digitalbankingfintechofficer | موثّق | أخصائي بنوك رقمية وتكنولوجيا مالية Digital Banking & FinTech Officer | 13–23 ألف مبتدئ · 32–42 ألف سينيور
+banktreasurydealer | موثّق | متداول خزينة بنكية Bank Treasury Dealer | 9–16 ألف مبتدئ · 22–29 ألف سينيور
+
+# إدارة الأعمال – التمويل والاستثمار
+financialanalyst | موثّق | محلل مالي Financial Analyst | 12–25 ألف مبتدئ · 38–51 ألف سينيور
+investmentanalyst | موثّق | محلل استثمار / سمسار Investment Analyst | 12–22 ألف مبتدئ · 31–41 ألف سينيور
+wealthmanager | موثّق | مدير ثروات وأصول Wealth Manager | 12–19 ألف مبتدئ · 26–33 ألف سينيور
+investorrelations | تقدير تحريري | مسؤول علاقات مستثمرين Investor Relations | 12–21 ألف مبتدئ · 24–47 ألف سينيور
+vcanalyst | موثّق | محلل ستارت أب / رأس مال جريء VC Analyst | 12–25 ألف مبتدئ · 38–51 ألف سينيور
+equityresearchanalyst | موثّق | محلل أسهم Equity Research Analyst | 12–22 ألف مبتدئ · 31–41 ألف سينيور
+financialriskofficer | موثّق | أخصائي مخاطر مالية Financial Risk Officer | 12–20 ألف مبتدئ · 28–36 ألف سينيور
+
+# إدارة الأعمال – التسويق والتجارة الإلكترونية
+digitalmarketer | موثّق | أخصائي تسويق رقمي Digital Marketer | 7–10 ألف مبتدئ · 14–19 ألف سينيور
+businessdevelopment | تقدير تحريري | مدير مبيعات / تطوير أعمال Business Development | 9–17 ألف مبتدئ · 23–46 ألف سينيور
+contentmanager | موثّق | صانع محتوى ومدير محتوى Content Manager | 7–13 ألف مبتدئ · 19–25 ألف سينيور
+ecommercemanager | موثّق | مدير متجر إلكتروني E-commerce Manager | 14–22 ألف مبتدئ · 30–38 ألف سينيور
+brandmarketresearch | موثّق | باحث سوق ومدير علامة Brand & Market Research | 10–17 ألف مبتدئ · 24–31 ألف سينيور
+paidadsspecialist | موثّق | أخصائي إعلانات مدفوعة Paid Ads Specialist | 10–15 ألف مبتدئ · 19–24 ألف سينيور
+seoseomarketinganalytics | موثّق | أخصائي SEO وتحليلات تسويق SEO & Marketing Analytics | 11–16 ألف مبتدئ · 20–25 ألف سينيور
+
+# الاقتصاد
+economicresearcher | موثّق | باحث ومحلل اقتصادي Economic Researcher | 8–16 ألف مبتدئ · 23–30 ألف سينيور
+feasibilityanalyst | موثّق | أخصائي دراسات جدوى Feasibility Analyst | 8–16 ألف مبتدئ · 23–30 ألف سينيور
+economicdataanalyst | موثّق | محلل بيانات اقتصادية Economic Data Analyst | 11–23 ألف مبتدئ · 35–46 ألف سينيور
+policyinvestmentanalyst | موثّق | محلل سياسات واستثمار Policy & Investment Analyst | 12–22 ألف مبتدئ · 31–41 ألف سينيور
+developmentconsultant | موثّق | مستشار مشروعات تنمية Development Consultant | 12–21 ألف مبتدئ · 30–38 ألف مستشار
+macroanalyst | موثّق | محلل اقتصاد كلي Macro Analyst | 8–16 ألف مبتدئ · 23–30 ألف سينيور
+pricingcompetitionanalyst | موثّق | محلل تسعير ومنافسة Pricing & Competition Analyst | 10–17 ألف مبتدئ · 24–31 ألف سينيور
+
+# العلوم الاكتوارية
+actuarialanalyst | موثّق | أكتواري Actuarial Analyst | 13–23 ألف مبتدئ · 34–44 ألف سينيور
+insuranceriskanalyst | موثّق | محلل مخاطر تأمين Insurance Risk Analyst | 10–18 ألف مبتدئ · 26–34 ألف سينيور
+insurancedataanalyst | موثّق | أكتواري بيانات تأمين Insurance Data Analyst | 11–23 ألف مبتدئ · 35–46 ألف سينيور
+pensionanalyst | موثّق | أخصائي معاشات وتأمينات اجتماعية Pension Analyst | 10–14 ألف مبتدئ · 18–23 ألف سينيور
+ermanalyst | موثّق | مدير مخاطر مؤسسية ERM Analyst | 17–27 ألف مبتدئ · 36–46 ألف سينيور
+pricingactuary | موثّق | أكتواري تسعير Pricing Actuary | 13–23 ألف مبتدئ · 34–44 ألف سينيور
+reservinganalyst | موثّق | محلل احتياطيات تأمين Reserving Analyst | 13–23 ألف مبتدئ · 34–44 ألف سينيور
+
+# إدارة الأعمال – المنشآت البترولية والطاقة
+energyadminfinanceofficer | موثّق | إداري ومالي في شركة بترول وطاقة Energy Admin & Finance Officer | 12–16 ألف مبتدئ · 20–24 ألف سينيور
+energyanalyst | موثّق | محلل اقتصاد الطاقة Energy Analyst | 8–16 ألف مبتدئ · 23–30 ألف سينيور
+procurementcontracts | موثّق | مسؤول مشتريات وعقود طاقة Procurement & Contracts | 11–20 ألف مبتدئ · 30–39 ألف سينيور
+renewableprojectscoordinator | موثّق | مسؤول طاقة متجددة ومشروعات Renewable Projects Coordinator | 11–15 ألف مبتدئ · 20–25 ألف سينيور
+hseofficer | موثّق | مسؤول سلامة وبيئة وجودة HSE Officer | 12–16 ألف مبتدئ · 21–25 ألف سينيور
