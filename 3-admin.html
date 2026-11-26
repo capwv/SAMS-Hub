@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة الأدمن | Infinity University Activity</title>
+<link rel="icon" href="assets/logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a14;--panel:#0f1420;--line:#25304a;--tx:#e8ecf5;--mu:#9aa7c2;--a:#3b82f6;--b:#8b5cf6;--g:#34d399;--r:#f87171;--gold:#fbbf24}
+*{box-sizing:border-box;margin:0}body{background:radial-gradient(1200px 500px at 50% -120px,rgba(59,130,246,.25),transparent),var(--bg);color:var(--tx);font-family:Cairo,system-ui,sans-serif;line-height:1.6;min-height:100vh}
+.w{max-width:1180px;margin:0 auto;padding:18px 14px 70px}
+h1{font-size:1.45rem;font-weight:800;background:linear-gradient(90deg,#93c5fd,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}.top .sp{flex:1}
+.btn{padding:9px 15px;border-radius:10px;border:1px solid #334968;background:#17253d;color:#cbd5e1;font:700 13px Cairo,sans-serif;cursor:pointer}.btn.p{background:linear-gradient(135deg,#2563eb,#7c5cff);border-color:#60a5fa;color:#fff}.btn.d{border-color:#7f1d1d;color:#fca5a5}.btn:disabled{opacity:.5}
+.login{max-width:400px;margin:9vh auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.login h1{margin-bottom:6px}.login p{color:var(--mu);font-size:.88rem;margin-bottom:10px}
+input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:#0a0e18;color:#fff;font:600 15px Cairo,sans-serif;margin:5px 0 10px;direction:ltr;text-align:left}input:focus{outline:none;border-color:#60a5fa}
+label{font-size:.85rem;color:#cbd5e1}.er{color:#fca5a5;font-size:.85rem;min-height:1.3em;margin-bottom:8px}.ok{color:#86efac}
+.kp{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}.k{background:linear-gradient(180deg,#121a2c,var(--panel));border:1px solid var(--line);border-radius:14px;padding:13px}.k b{display:block;font-size:1.7rem;font-weight:800;line-height:1.15}.k span{color:var(--mu);font-size:.78rem}.k em{font-style:normal;color:var(--g);font-size:.75rem;display:block}
+.g2{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-bottom:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;overflow:hidden}.card h2{font-size:1rem;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:.85rem}th{color:var(--mu);font-weight:600;text-align:start;padding:7px 6px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:7px 6px;border-bottom:1px solid #182036;vertical-align:middle}tr:last-child td{border:0}
+.sc{overflow-x:auto}.bar{height:7px;border-radius:9px;background:#182036;min-width:60px}.bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--a),var(--b))}
+.tg{display:inline-block;padding:1px 8px;border-radius:99px;font-size:.72rem;border:1px solid var(--line);color:var(--mu)}.tg.a{border-color:var(--gold);color:var(--gold)}.tg.x{border-color:#7f1d1d;color:#fca5a5}.ltr{direction:ltr;unicode-bidi:embed}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.tools input{margin:0;max-width:260px}
+svg text{fill:#9aa7c2;font:11px Cairo,sans-serif}
+.ev{font-size:.8rem;color:var(--mu);max-height:360px;overflow:auto}.ev div{padding:5px 0;border-bottom:1px solid #182036}
+.mod{position:fixed;inset:0;background:rgba(2,4,10,.8);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}.mod .bx{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;width:min(420px,100%)}
+@media(max-width:900px){.kp{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="mod" id="mod"><div class="bx" id="mbx"></div></div>
+<script>
+var API='https://ttbhkelmmnhoohucewda.supabase.co/rest/v1/rpc/',KEY='sb_publishable_dtIO-b76YDbgp6RNCr_mjA_LZLdc1Z8';
+var CN={'sql-from-zero':'SQL','python-da-from-zero':'Python DA','stats-from-zero':'الإحصاء','ml-from-zero':'ML','javascript-from-zero':'JavaScript','java-from-zero':'Java','cpp-from-zero':'C++','git-from-zero':'Git','excel-da-from-zero':'Excel','tableau-from-zero':'Tableau','powerbi-from-zero':'Power BI','cyber-from-zero':'Cyber','html-css-from-zero':'HTML/CSS','flutter-from-zero':'Flutter','leaderboard':'Leaderboard'};
+var T=null,O=null,U=[],days=30,app=document.getElementById('app');
+function rpc(n,a){return fetch(API+n,{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify(a||{})}).then(function(r){return r.json()}).catch(function(){return{error:'net'}})}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function n(x){return Number(x||0).toLocaleString('en-US')}
+function cn(s){return CN[s]||s||'-'}
+function dt(t){var d=new Date(t);return d.toLocaleString('en-GB',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}
+try{T=sessionStorage.getItem('iua-admin')}catch(e){}
+function loginView(mode){var claim=mode==='claim';
+ app.innerHTML='<div class="login"><h1>لوحة الأدمن</h1><p>'+(claim?'أول مرة: اكتب كود التفعيل اللي اتبعتلك واختار كلمة سر ليك (٨ حروف على الأقل). مفيش حد غيرك هيعرفها.':'دخول للأدمن فقط.')+'</p>'+
+ (claim?'<label>كود التفعيل</label><input id="cd" autocomplete="off">':'<label>اسم المستخدم</label><input id="un" value="admin" autocomplete="username">')+
+ '<label>'+(claim?'كلمة السر الجديدة':'كلمة السر')+'</label><input id="pw" type="password" autocomplete="'+(claim?'new-password':'current-password')+'"><div class="er" id="er"></div><button class="btn p" id="go" style="width:100%">'+(claim?'تفعيل الحساب':'دخول')+'</button>'+
+ '<p style="margin-top:12px"><a href="#" id="sw" style="color:#93c5fd;font-size:.85rem">'+(claim?'عندي حساب بالفعل':'أول مرة؟ فعّل الحساب بالكود')+'</a></p></div>';
+ document.getElementById('sw').onclick=function(e){e.preventDefault();loginView(claim?'in':'claim')};
+ var go=function(){var er=document.getElementById('er');er.textContent='...';var pw=document.getElementById('pw').value;
+  var p=claim?rpc('app_admin_claim',{p_code:document.getElementById('cd').value.trim(),p_password:pw}):rpc('app_login',{p_username:document.getElementById('un').value,p_password:pw});
+  p.then(function(r){if(r.token&&r.user&&r.user.admin){T=r.token;try{sessionStorage.setItem('iua-admin',T)}catch(e){}start()}else if(r.token){rpc('app_logout',{p_token:r.token});er.textContent='الحساب ده مش أدمن'}else er.textContent={bad_credentials:'بيانات غلط',bad_code:'الكود غلط أو منتهي',bad_password:'كلمة السر لازم ٨ حروف على الأقل',locked:'محاولات كتير، جرّب بعد ١٠ دقايق',net:'مفيش اتصال'}[r.error]||'خطأ'})};
+ document.getElementById('go').onclick=go;document.getElementById('pw').onkeydown=function(e){if(e.key==='Enter')go()}}
+function start(){app.innerHTML='<div class="w"><div class="empty" style="color:#9aa7c2;padding:40px;text-align:center">جاري تحميل الأرقام...</div></div>';refresh()}
+function refresh(){Promise.all([rpc('app_admin_overview',{p_token:T,p_days:days}),rpc('app_admin_users',{p_token:T})]).then(function(a){
+ if(a[0].error==='forbidden'||a[0].error==='auth'){T=null;try{sessionStorage.removeItem('iua-admin')}catch(e){}return loginView('in')}
+ if(a[0].error)return;O=a[0];U=a[1].users||[];draw()})}
+function line(ds,keys,cols){var W=640,H=190,P=26,mx=1;ds.forEach(function(d){keys.forEach(function(k){mx=Math.max(mx,d[k])})});var x=function(i){return P+i*(W-P*2)/Math.max(1,ds.length-1)},y=function(v){return H-P-v*(H-P*2)/mx};var s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="direction:ltr">';
+ for(var g=0;g<=3;g++){var v=Math.round(mx*g/3);s+='<line x1="'+P+'" x2="'+(W-P)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="#1b2540"/><text x="2" y="'+(y(v)+4)+'">'+v+'</text>'}
+ keys.forEach(function(k,j){var pts=ds.map(function(d,i){return x(i)+','+y(d[k])}).join(' ');s+='<polyline fill="none" stroke="'+cols[j]+'" stroke-width="2.4" points="'+pts+'"/>';ds.forEach(function(d,i){if(ds.length<=45)s+='<circle cx="'+x(i)+'" cy="'+y(d[k])+'" r="2.5" fill="'+cols[j]+'"/>'})});
+ [0,Math.floor(ds.length/2),ds.length-1].forEach(function(i){if(ds[i])s+='<text x="'+x(i)+'" y="'+(H-6)+'" text-anchor="middle">'+ds[i].day.slice(5)+'</text>'});return s+'</svg>'}
+function draw(){var t=O.totals,pc=O.per_course,mxl=1;pc.forEach(function(c){mxl=Math.max(mxl,c.learners)});
+ var kp=[['مسجّلين',t.users,'+'+t.new_today+' النهارده · +'+t.new_7d+' أسبوع'],['نشطين النهارده',t.dau,'أسبوع '+t.wau+' · شهر '+t.mau],['زوّار فريدين (٧ أيام)',t.visitors_7d,'النهارده '+t.visitors_today+' · كله '+t.visitors_total],['بدأوا يتعلموا',t.with_progress,Math.round(100*t.with_progress/Math.max(1,t.users))+'% من المسجلين'],['كورسات اتكمّلت',t.completions,t.completers+' طالب خلّص كورس'],['دروس اتخلصت',t.lessons_done,'نشاط '+n(t.events_total)+' حدث · راجعين '+t.returning_users]];
+ var h='<div class="w"><div class="top"><h1>لوحة الأدمن · Infinity University Activity</h1><span class="sp"></span><span style="color:#9aa7c2;font-size:.78rem">آخر تحديث '+dt(O.generated_at)+'</span><select id="dy" class="btn">'+[7,14,30,90].map(function(d){return '<option value="'+d+'"'+(d===days?' selected':'')+'>'+d+' يوم</option>'}).join('')+'</select><button class="btn" id="rf">تحديث</button><button class="btn p" id="sm">📋 ملخص للنشر</button><a class="btn" style="text-decoration:none" href="leaderboard.html" target="_blank" rel="noopener">🏆 المتصدرين</a><button class="btn" id="lo">خروج</button></div>';
+ h+='<div class="kp">'+kp.map(function(k){return '<div class="k"><b>'+n(k[1])+'</b><span>'+k[0]+'</span><em>'+k[2]+'</em></div>'}).join('')+'</div>';
+ h+='<div class="g2"><div class="card"><h2>النمو والنشاط اليومي <span style="font-weight:400;color:#9aa7c2;font-size:.78rem">(<b style="color:#60a5fa">●</b> زوّار <b style="color:#34d399">●</b> مستخدمين نشطين <b style="color:#fbbf24">●</b> تسجيلات جديدة)</span></h2>'+line(O.daily,['visitors','active','signups'],['#60a5fa','#34d399','#fbbf24'])+'</div>';
+ h+='<div class="card"><h2>أنواع الأحداث</h2><div class="sc"><table>'+O.event_types.map(function(e){return '<tr><td>'+esc(e.type)+'</td><td>'+n(e.count)+'</td></tr>'}).join('')+'</table></div></div></div>';
+ h+='<div class="g2"><div class="card"><h2>الأكاديميات</h2><div class="sc"><table><tr><th>الأكاديمية</th><th>طلاب</th><th>متوسط التقدم</th><th>خلّصوا</th><th>زيارات</th><th>ضغطات</th><th></th></tr>'+pc.filter(function(c){return c.slug!=='leaderboard'}).map(function(c){return '<tr><td>'+esc(cn(c.slug))+'</td><td>'+n(c.learners)+'</td><td>'+n(c.avg_pct)+'%</td><td>'+n(c.completions)+'</td><td>'+n(c.views)+'</td><td>'+n(c.clicks)+'</td><td style="width:20%"><div class="bar"><i style="width:'+Math.round(100*c.learners/mxl)+'%"></i></div></td></tr>'}).join('')+'</table></div></div>';
+ h+='<div class="card"><h2>أكتر حاجات بيضغطوا عليها</h2><div class="sc" style="max-height:330px;overflow:auto"><table>'+(O.top_targets.length?O.top_targets.map(function(e){return '<tr><td>'+esc(e.target)+'</td><td style="color:#9aa7c2">'+esc(cn(e.slug))+'</td><td>'+n(e.count)+'</td></tr>'}).join(''):'<tr><td style="color:#9aa7c2">لسه مفيش بيانات</td></tr>')+'</table></div></div></div>';
+ h+='<div class="card" style="margin-bottom:14px"><h2>الحسابات ('+U.length+')</h2><div class="tools"><input id="q" placeholder="ابحث باسم المستخدم..."><button class="btn" id="csv">⬇️ تصدير CSV (إكسيل)</button></div><div class="sc"><table id="ut"></table></div></div>';
+ h+='<div class="card"><h2>آخر الأحداث</h2><div class="ev">'+O.recent.map(function(e){return '<div><span class="ltr">'+dt(e.at)+'</span> · <b style="color:#e8ecf5">'+esc(e.user)+'</b> · '+esc(e.type)+' · '+esc(cn(e.slug))+(e.meta&&e.meta.target?' · '+esc(e.meta.target):'')+(e.meta&&e.meta.pct!=null?' · '+e.meta.pct+'%':'')+'</div>'}).join('')+'</div></div></div>';
+ app.innerHTML=h;
+ document.getElementById('dy').onchange=function(){days=+this.value;refresh()};document.getElementById('rf').onclick=refresh;
+ document.getElementById('lo').onclick=function(){rpc('app_logout',{p_token:T});T=null;try{sessionStorage.removeItem('iua-admin')}catch(e){}loginView('in')};
+ document.getElementById('sm').onclick=summary;document.getElementById('csv').onclick=csv;document.getElementById('q').oninput=users;users()}
+function users(){var q=(document.getElementById('q').value||'').toLowerCase(),rows=U.filter(function(u){return !q||(u.username+' '+u.name).toLowerCase().indexOf(q)>-1});
+ document.getElementById('ut').innerHTML='<tr><th>المستخدم</th><th>الاسم</th><th>سجّل</th><th>آخر ظهور</th><th>كورسات</th><th>خلّص</th><th>دروس</th><th>أحداث</th><th></th></tr>'+rows.map(function(u,i){return '<tr><td class="ltr"><a style="color:#93c5fd" target="_blank" rel="noopener" href="profile.html?u='+encodeURIComponent(u.username)+'">@'+esc(u.username)+'</a>'+(u.admin?' <span class="tg a">admin</span>':'')+(u.disabled?' <span class="tg x">موقوف</span>':'')+'</td><td>'+esc(u.name)+'</td><td>'+dt(u.created_at)+'</td><td>'+dt(u.last_seen)+'</td><td>'+u.courses+'</td><td>'+u.completed+'</td><td>'+u.lessons+'</td><td>'+u.events+'</td><td style="white-space:nowrap"><button class="btn" data-a="pw" data-u="'+esc(u.username)+'">كلمة السر</button> <button class="btn" data-a="pr" data-u="'+esc(u.username)+'">تقدمه</button>'+(u.admin?'':' <button class="btn" data-a="dis" data-u="'+esc(u.username)+'" data-d="'+(u.disabled?0:1)+'">'+(u.disabled?'تفعيل':'إيقاف')+'</button> <button class="btn d" data-a="del" data-u="'+esc(u.username)+'">حذف</button>')+'</td></tr>'}).join('');
+ document.querySelectorAll('#ut button').forEach(function(b){b.onclick=function(){act(b.getAttribute('data-a'),b.getAttribute('data-u'),b.getAttribute('data-d'))}})}
+function modal(h){var m=document.getElementById('mod');document.getElementById('mbx').innerHTML=h;m.style.display='flex';m.onclick=function(e){if(e.target===m)m.style.display='none'}}
+function close(){document.getElementById('mod').style.display='none'}
+function act(a,u,d){
+ if(a==='pw')return modal('<h2 style="margin-bottom:8px">كلمة سر جديدة لـ <span class="ltr">@'+esc(u)+'</span></h2><p style="color:#9aa7c2;font-size:.85rem;margin-bottom:8px">كلمات السر متشفرة ومحدش يقدر يشوفها، لكن تقدر تحط واحدة جديدة وتبعتهاله. هيتسجّل خروجه من كل الأجهزة.</p><input id="np" type="text" placeholder="٦ حروف على الأقل" autocomplete="off"><div class="er" id="er"></div><button class="btn p" id="ok">تغيير</button> <button class="btn" id="cx">إلغاء</button>'),document.getElementById('cx').onclick=close,document.getElementById('ok').onclick=function(){rpc('app_admin_set_password',{p_token:T,p_username:u,p_new:document.getElementById('np').value}).then(function(r){var e=document.getElementById('er');if(r.ok){e.className='er ok';e.textContent='تم ✓'}else e.textContent='لازم ٦ حروف على الأقل'})};
+ if(a==='pr')return rpc('app_admin_user_progress',{p_token:T,p_username:u}).then(function(r){modal('<h2 style="margin-bottom:8px">تقدم <span class="ltr">@'+esc(u)+'</span></h2><table>'+((r.items||[]).map(function(i){return '<tr><td>'+esc(cn(i.slug))+'</td><td>'+i.pct+'%</td><td>'+i.lessons+' درس</td><td>'+(i.completed_at?'🎓':'')+'</td></tr>'}).join('')||'<tr><td style="color:#9aa7c2">لسه ما بدأش</td></tr>')+'</table><br><button class="btn" id="cx">إغلاق</button>');document.getElementById('cx').onclick=close});
+ if(a==='dis')return rpc('app_admin_set_disabled',{p_token:T,p_username:u,p_disabled:d==='1'}).then(refresh);
+ if(a==='del')return modal('<h2 style="margin-bottom:8px">حذف <span class="ltr">@'+esc(u)+'</span>؟</h2><p style="color:#fca5a5;font-size:.88rem;margin-bottom:12px">هيتمسح الحساب وكل تقدمه نهائيًا.</p><button class="btn d" id="ok">احذف</button> <button class="btn" id="cx">إلغاء</button>'),document.getElementById('cx').onclick=close,document.getElementById('ok').onclick=function(){rpc('app_admin_delete_user',{p_token:T,p_username:u}).then(function(){close();refresh()})}}
+function csv(){var rows=[['username','name','created_at','last_seen','courses_started','courses_completed','lessons','events','disabled']].concat(U.map(function(u){return [u.username,u.name,u.created_at,u.last_seen,u.courses,u.completed,u.lessons,u.events,u.disabled]}));
+ var s='\ufeff'+rows.map(function(r){return r.map(function(c){c=String(c==null?'':c);if(/^[=+\-@]/.test(c))c="'"+c;return '"'+c.replace(/"/g,'""')+'"'}).join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([s],{type:'text/csv;charset=utf-8'}));a.download='iua-accounts-'+new Date().toISOString().slice(0,10)+'.csv';a.click()}
+function summary(){var t=O.totals,s='📊 أرقام حقيقية من منصة Infinity University Activity ('+new Date().toLocaleDateString('ar-EG')+')\n\n👥 '+n(t.users)+' طالب مسجّل\n🟢 '+n(t.wau)+' طالب نشط آخر ٧ أيام ('+n(t.dau)+' النهارده)\n🌐 '+n(t.visitors_7d)+' زائر فريد آخر ٧ أيام\n✅ '+n(t.lessons_done)+' درس اتخلص\n🎓 '+n(t.completions)+' كورس اتكمّل بالكامل\n🖱️ '+n(t.events_total)+' تفاعل مسجّل\n\n١٤ أكاديمية مجانية بالعربي من الصفر: https://capwv.github.io/SAMS-Hub/';
+ modal('<h2 style="margin-bottom:8px">ملخص جاهز للنشر</h2><textarea id="tx" style="width:100%;height:240px;background:#0a0e18;color:#fff;border:1px solid #25304a;border-radius:10px;padding:10px;font:600 14px Cairo;direction:rtl"></textarea><br><br><button class="btn p" id="cp">نسخ</button> <button class="btn" id="cx">إغلاق</button>');var x=document.getElementById('tx');x.value=s;document.getElementById('cx').onclick=close;document.getElementById('cp').onclick=function(){x.select();try{navigator.clipboard.writeText(s)}catch(e){document.execCommand('copy')}this.textContent='اتنسخ ✓'}}
+if(T)start();else loginView('in');
+</script>
+</body>
+</html>
