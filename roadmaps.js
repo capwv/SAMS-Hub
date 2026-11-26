@@ -60,7 +60,10 @@ x.fillStyle='#e8eefc';x.font='900 92px Cairo,Tahoma,sans-serif';x.fillText('شه
 x.fillStyle=p.c;x.font='900 78px Cairo,Tahoma,sans-serif';x.fillText(p.n,W/2,450);
 x.fillStyle='#9aa7c2';x.font='600 38px Cairo,Tahoma,sans-serif';x.fillText('تشهد المنصة بأن',W/2,580);
 x.fillStyle='#fff';x.font='900 100px Cairo,Tahoma,sans-serif';x.fillText(nm,W/2,720);
-x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('أتم الكورسات: '+p.s.map(function(k){return A[k][0]}).join(' · '),W/2,830);x.fillText('وأنجز مشروع التخرج الخاص بالمسار',W/2,890);
+x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('أتم الكورسات التالية',W/2,820);
+var nm2=p.s.map(function(k){return A[k][0]}),sep=44,tw=0,ms=nm2.map(function(t){var w=x.measureText(t).width;tw+=w;return w});tw+=sep*(nm2.length-1);
+var rx=W/2+tw/2;x.textAlign='right';nm2.forEach(function(t,i){x.fillStyle='#e8eefc';x.fillText(t,rx,880);rx-=ms[i];if(i<nm2.length-1){x.fillStyle=p.c;x.textAlign='center';x.fillText('•',rx-sep/2,880);x.textAlign='right';rx-=sep}});
+x.textAlign='center';x.fillStyle='#9aa7c2';x.fillText('وأنجز مشروع التخرج الخاص بالمسار',W/2,950);
 x.font='600 30px Cairo,Tahoma,sans-serif';x.fillText(new Date().toLocaleDateString('ar-EG',{year:'numeric',month:'long',day:'numeric'}),W/2,1010);
 var a=document.createElement('a');a.download='roadmap-'+p.id+'.png';a.href=c.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove()}
 document.getElementById('rmTabs').addEventListener('click',function(e){var b=e.target.closest('.rm-tab');if(!b)return;cur=b.getAttribute('data-id');history.replaceState(null,'','#'+cur);tabs();view()});
