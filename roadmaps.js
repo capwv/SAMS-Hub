@@ -52,6 +52,7 @@ h+='<div class="rm-cert panel" style="--pc:'+p.c+'"><div><b>شهادة مسار 
 document.getElementById('rmView').innerHTML=h;
 document.getElementById('rmCap').onchange=function(){s(capKey(p),this.checked?'1':'0');view()};
 document.getElementById('rmCert').onclick=function(){cert(p)}}
+try{['600 36px Cairo','700 36px Cairo','800 36px Cairo','900 40px Cairo'].forEach(function(f){document.fonts.load(f,'ابabc')})}catch(e){}
 function fx(t){t=t.replace(/ و /g,' + ');return (/[\u0600-\u06FF]/.test(t)?'\u2067':'\u2066')+t+'\u2069'}
 function cert(p){var nm=(acct&&acct.user&&(acct.user.display_name||acct.user.name||acct.user.username))||'';nm=prompt('الاسم اللي هيظهر على الشهادة',nm||'')||nm;if(!nm)return;
 var c=document.getElementById('rm-canvas'),x=c.getContext('2d'),W=c.width,H=c.height;x.direction='rtl';x.textAlign='center';
