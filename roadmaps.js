@@ -54,19 +54,23 @@ document.getElementById('rmCap').onchange=function(){s(capKey(p),this.checked?'1
 document.getElementById('rmCert').onclick=function(){cert(p)}}
 try{['600 36px Cairo','700 36px Cairo','800 36px Cairo','900 40px Cairo'].forEach(function(f){document.fonts.load(f,'ابabc')})}catch(e){}
 function fx(t){t=t.replace(/ و /g,' + ');return (/[\u0600-\u06FF]/.test(t)?'\u2067':'\u2066')+t+'\u2069'}
-function cert(p){var nm=(acct&&acct.user&&(acct.user.display_name||acct.user.name||acct.user.username))||'';nm=prompt('الاسم اللي هيظهر على الشهادة',nm||'')||nm;if(!nm)return;
-var c=document.getElementById('rm-canvas'),x=c.getContext('2d'),W=c.width,H=c.height;x.direction='rtl';x.textAlign='center';
+var EN_P={da:'Data Analyst',ds:'Data Science & ML',web:'Web Developer',soft:'Software Developer',app:'Mobile App Developer',sec:'Cybersecurity',acc:'Data-Driven Accountant',mkt:'Data-Driven Digital Marketing',job:'Job-Market Ready'};
+var EN_C={'excel-da-from-zero':'Excel for Analysis','sql-from-zero':'SQL','powerbi-from-zero':'Power BI','tableau-from-zero':'Tableau','python-da-from-zero':'Python for Analysis','stats-from-zero':'Statistics','ml-from-zero':'Machine Learning','html-css-from-zero':'HTML & CSS','javascript-from-zero':'JavaScript','git-from-zero':'Git & GitHub','cpp-from-zero':'C++','java-from-zero':'Java','flutter-from-zero':'Flutter','cyber-from-zero':'Cybersecurity','accounting-from-zero':'Accounting','digital-marketing-from-zero':'Digital Marketing','ai-tools-from-zero':'AI Tools for Work','english-from-zero':'English'};
+function cert(p){var nm=(acct&&acct.user&&(acct.user.display_name||acct.user.name||acct.user.username))||'';nm=prompt('Name to show on the certificate',nm||'')||nm;if(!nm)return;
+var c=document.getElementById('rm-canvas'),x=c.getContext('2d'),W=c.width,H=c.height;x.direction='ltr';x.textAlign='center';
+function fit(t,wt,sz,mx){var f=sz;x.font=wt+' '+f+'px Cairo,Tahoma,sans-serif';while(f>30&&x.measureText(t).width>mx){f-=4;x.font=wt+' '+f+'px Cairo,Tahoma,sans-serif'}return f}
 x.fillStyle='#06070a';x.fillRect(0,0,W,H);x.strokeStyle=p.c;x.lineWidth=6;x.strokeRect(50,50,W-100,H-100);x.lineWidth=2;x.strokeRect(70,70,W-140,H-140);
-x.fillStyle=p.c;x.font='900 40px Cairo,Tahoma,sans-serif';x.fillText('Infinity Team · SAMS',W/2,190);
-x.fillStyle='#e8eefc';x.font='900 92px Cairo,Tahoma,sans-serif';x.fillText('شهادة إتمام مسار',W/2,340);
-x.fillStyle=p.c;x.font='900 78px Cairo,Tahoma,sans-serif';x.fillText(fx(p.n),W/2,450);
-x.fillStyle='#9aa7c2';x.font='600 38px Cairo,Tahoma,sans-serif';x.fillText('تشهد المنصة بأن',W/2,580);
+x.fillStyle=p.c;x.font='900 40px Cairo,Tahoma,sans-serif';x.fillText('Infinity Team \u00b7 SAMS',W/2,190);
+x.fillStyle='#e8eefc';fit('Certificate of Completion','900',92,W-300);x.fillText('Certificate of Completion',W/2,340);
+x.fillStyle=p.c;var pt=(EN_P[p.id]||p.id)+' Path';fit(pt,'900',78,W-300);x.fillText(pt,W/2,450);
+x.fillStyle='#9aa7c2';x.font='600 38px Cairo,Tahoma,sans-serif';x.fillText('This certifies that',W/2,580);
 x.fillStyle='#fff';var fs=100;x.font='900 100px Cairo,Tahoma,sans-serif';while(fs>40&&x.measureText(nm).width>W-300){fs-=4;x.font='900 '+fs+'px Cairo,Tahoma,sans-serif'}x.fillText(nm,W/2,720);
-x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('أتم الكورسات التالية',W/2,820);
-var nm2=p.s.map(function(k){return fx(A[k][0])}),sep=44,tw=0,ms=nm2.map(function(t){var w=x.measureText(t).width;tw+=w;return w});tw+=sep*(nm2.length-1);
-var rx=W/2+tw/2;x.textAlign='right';nm2.forEach(function(t,i){x.fillStyle='#e8eefc';x.fillText(t,rx,880);rx-=ms[i];if(i<nm2.length-1){x.fillStyle=p.c;x.textAlign='center';x.fillText('•',rx-sep/2,880);x.textAlign='right';rx-=sep}});
-x.textAlign='center';x.fillStyle='#9aa7c2';x.fillText('وأنجز مشروع التخرج الخاص بالمسار',W/2,950);
-x.font='600 30px Cairo,Tahoma,sans-serif';x.fillText(new Date().toLocaleDateString('ar-EG',{year:'numeric',month:'long',day:'numeric'}),W/2,1010);
+x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('has completed the following courses',W/2,820);
+var cn=p.s.map(function(k){return EN_C[k]||A[k][0]}),sep=44,cs=36,tw,ms;
+for(;;){x.font='600 '+cs+'px Cairo,Tahoma,sans-serif';tw=0;ms=cn.map(function(t){var w=x.measureText(t).width;tw+=w;return w});tw+=sep*(cn.length-1);if(tw<=W-260||cs<=22)break;cs-=2}
+var lx=W/2-tw/2;cn.forEach(function(t,i){x.textAlign='left';x.fillStyle='#e8eefc';x.fillText(t,lx,880);lx+=ms[i];if(i<cn.length-1){x.fillStyle=p.c;x.textAlign='center';x.fillText('\u2022',lx+sep/2,880);lx+=sep}});
+x.textAlign='center';x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('and completed the path capstone project',W/2,950);
+x.font='600 30px Cairo,Tahoma,sans-serif';x.fillText(new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),W/2,1010);
 var a=document.createElement('a');a.download='roadmap-'+p.id+'.png';a.href=c.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove()}
 document.getElementById('rmTabs').addEventListener('click',function(e){var b=e.target.closest('.rm-tab');if(!b)return;cur=b.getAttribute('data-id');history.replaceState(null,'','#'+cur);tabs();view()});
 tabs();view();
