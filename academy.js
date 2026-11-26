@@ -14,6 +14,7 @@
   var anon=get(KB);if(!anon){anon=Math.random().toString(36).slice(2)+Date.now().toString(36);put(KB,anon)}
   var acct=J(get(KA))||null;var HUBMODE=(slug==='hub');var gated=false,after=null;
   function saveAcct(a){acct=a;if(a)put(KA,JSON.stringify(a));else del(KA)}
+  var KO='iua-owner';function owner(){return get(KO)}function wipeLocal(){try{var ks=[];for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if((/progress(-v\d+)?$/i.test(k)||/-lab-v\d+$/i.test(k))&&!/^iua-/.test(k)||k==='iua-last')ks.push(k)}ks.forEach(function(k){localStorage.removeItem(k)})}catch(e){}}
   function rpc(n,a,ka){return fetch(API+n,{method:'POST',keepalive:!!ka,headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify(a||{})}).then(function(r){return r.json()}).catch(function(){return{error:'net'}})}
   /* ---------- tracking ---------- */
   var q=[],nClicks=0;
@@ -106,7 +107,7 @@
       '<div class="er"></div><div class="row"><button class="b" id="iua-lo" type="button">تسجيل خروج</button><button class="b" id="iua-x" type="button">إغلاق</button></div></div>';
       am.querySelector('#iua-sv').onclick=function(){rpc('app_set_prefs',{p_token:acct.token,p_display:am.querySelector('#iua-dn').value,p_hidden:am.querySelector('#iua-hd').checked}).then(function(r){if(r.user){acct.user=r.user;saveAcct(acct);ui();msg('تم الحفظ ✓',1)}else msg(ERR[r.error]||'حصل خطأ')})};
       am.querySelector('#iua-cp').onclick=function(){rpc('app_change_password',{p_token:acct.token,p_old:am.querySelector('#iua-op').value,p_new:am.querySelector('#iua-np').value}).then(function(r){msg(r.ok?'تم تغيير كلمة السر ✓':(ERR[r.error]||'حصل خطأ'),r.ok)})};
-      am.querySelector('#iua-lo').onclick=function(){push(true);rpc('app_logout',{p_token:acct.token},true);var sn=snap();for(var k in sn.p)del(k);for(var k2 in sn.l)del(k2);saveAcct(null);setTimeout(function(){location.reload()},250)};
+      am.querySelector('#iua-lo').onclick=function(){push(true);rpc('app_logout',{p_token:acct.token},true);var sn=snap();for(var k in sn.p)del(k);for(var k2 in sn.l)del(k2);saveAcct(null);del(KO);setTimeout(function(){location.reload()},250)};
     }else{var reg=tab==='up';
       am.innerHTML='<div class="bx"><h3>'+(reg?'🎓 اعمل حساب جديد':'👋 أهلاً بيك تاني')+'</h3><p class="s">'+((gated||after)?'<b style="color:#fff">لازم تسجّل الأول عشان تدخل الأكاديمية.</b><br>':'')+'حسابك بيحفظ تقدمك على السيرفر، فمهما مسحت المتصفح أو غيّرت الجهاز تكمل من مكانك. اسمك بيظهر في لوحة المتصدرين وتقدر تخفيه.</p>'+
       '<div class="tabs"><button class="b'+(reg?'':' on')+'" data-t="in" type="button">دخول</button><button class="b'+(reg?' on':'')+'" data-t="up" type="button">حساب جديد</button></div>'+
@@ -117,7 +118,7 @@
       var tb=am.querySelectorAll('.tabs button');for(var i=0;i<tb.length;i++)tb[i].onclick=function(){draw(this.getAttribute('data-t'))};
       var go=function(){var u=am.querySelector('#iua-un').value,p=am.querySelector('#iua-pw').value,d=reg?am.querySelector('#iua-dn').value:null;msg('...',1);
         rpc(reg?'app_register':'app_login',reg?{p_username:u,p_password:p,p_display:d}:{p_username:u,p_password:p}).then(function(r){
-          if(r.token){saveAcct({token:r.token,user:r.user});ui();msg('تم ✓ بنحمّل تقدمك...',1);lastPushed='';(HUBMODE?function(f){f(true)}:pull)(function(){unlock();shut();if(after){var hh=after;after=null;location.href=hh;return}track('view',{ref:'gate'});toast(reg?'تم إنشاء حسابك 🎉 تقدمك بيتحفظ تلقائي':'أهلاً '+esc(r.user.name||r.user.username)+' 👋 تقدمك اتحمّل',1500)})}else msg(ERR[r.error]||'حصل خطأ')})};
+          if(r.token){var un=(r.user&&r.user.username)||u,own=owner(),fresh=reg||(own&&own!==un);saveAcct({token:r.token,user:r.user});ui();msg('تم ✓ بنحمّل تقدمك...',1);lastPushed='';if(fresh){wipeLocal();known=0;lastPushed=''}put(KO,un);if(fresh&&!HUBMODE){setTimeout(function(){if(after){var h2=after;after=null;location.href=h2}else location.reload()},400);return}(HUBMODE?function(f){f(true)}:pull)(function(){unlock();shut();if(after){var hh=after;after=null;location.href=hh;return}track('view',{ref:'gate'});toast(reg?'تم إنشاء حسابك 🎉 تقدمك بيتحفظ تلقائي':'أهلاً '+esc(r.user.name||r.user.username)+' 👋 تقدمك اتحمّل',1500)})}else msg(ERR[r.error]||'حصل خطأ')})};
       am.querySelector('#iua-go').onclick=go;am.querySelector('#iua-pw').onkeydown=function(e){if(e.key==='Enter')go()};
       setTimeout(function(){var f=am.querySelector('#iua-un');if(f)f.focus()},50)}
     var xb=am.querySelector('#iua-x');xb.onclick=function(){after=null;shut()};if(gated||after){xb.textContent='كمّل كضيف 👀';xb.onclick=guest}}
@@ -156,6 +157,7 @@
   function mount(){document.head.appendChild(css);document.body.appendChild(btn);document.body.appendChild(am);document.body.appendChild(tst);ui();
     btn.onclick=function(){open()};am.addEventListener('click',function(e){if(e.target===am)shut()});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&am.style.display==='flex')shut()});
     track('view',{ref:(document.referrer||'').slice(0,60)});
+    if(acct&&acct.user){var ow=owner(),cu=acct.user.username;if(!ow)put(KO,cu);else if(ow!==cu){wipeLocal();put(KO,cu);if(!HUBMODE){location.reload();return}}}
     if(acct){rpc('app_me',{p_token:acct.token}).then(function(r){if(r&&r.error==='auth'){saveAcct(null);ui();if(!HUBMODE)lock()}else if(r&&r.user){acct.user=r.user;saveAcct(acct);ui();if(!HUBMODE){pull();loadStatus()}}else if(r&&r.error==='auth'&&false){}})}
     setInterval(nudge,5000);fixCopy();setTimeout(resumeInit,1800);
     if(HUBMODE){document.addEventListener('click',function(e){if(acct||isG())return;var a=e.target&&e.target.closest&&e.target.closest('a[href*="-from-zero"]');if(!a)return;e.preventDefault();e.stopPropagation();after=a.href;am.className='hub';am.style.display='flex';draw('up')},true)}else if(!acct)lock()}
