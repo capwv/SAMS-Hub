@@ -52,16 +52,17 @@ h+='<div class="rm-cert panel" style="--pc:'+p.c+'"><div><b>شهادة مسار 
 document.getElementById('rmView').innerHTML=h;
 document.getElementById('rmCap').onchange=function(){s(capKey(p),this.checked?'1':'0');view()};
 document.getElementById('rmCert').onclick=function(){cert(p)}}
+function fx(t){t=t.replace(/ و /g,' + ');return (/[\u0600-\u06FF]/.test(t)?'\u2067':'\u2066')+t+'\u2069'}
 function cert(p){var nm=(acct&&acct.user&&(acct.user.display_name||acct.user.name||acct.user.username))||'';nm=prompt('الاسم اللي هيظهر على الشهادة',nm||'')||nm;if(!nm)return;
 var c=document.getElementById('rm-canvas'),x=c.getContext('2d'),W=c.width,H=c.height;x.direction='rtl';x.textAlign='center';
 x.fillStyle='#06070a';x.fillRect(0,0,W,H);x.strokeStyle=p.c;x.lineWidth=6;x.strokeRect(50,50,W-100,H-100);x.lineWidth=2;x.strokeRect(70,70,W-140,H-140);
 x.fillStyle=p.c;x.font='900 40px Cairo,Tahoma,sans-serif';x.fillText('Infinity Team · SAMS',W/2,190);
 x.fillStyle='#e8eefc';x.font='900 92px Cairo,Tahoma,sans-serif';x.fillText('شهادة إتمام مسار',W/2,340);
-x.fillStyle=p.c;x.font='900 78px Cairo,Tahoma,sans-serif';x.fillText(p.n,W/2,450);
+x.fillStyle=p.c;x.font='900 78px Cairo,Tahoma,sans-serif';x.fillText(fx(p.n),W/2,450);
 x.fillStyle='#9aa7c2';x.font='600 38px Cairo,Tahoma,sans-serif';x.fillText('تشهد المنصة بأن',W/2,580);
-x.fillStyle='#fff';x.font='900 100px Cairo,Tahoma,sans-serif';x.fillText(nm,W/2,720);
+x.fillStyle='#fff';var fs=100;x.font='900 100px Cairo,Tahoma,sans-serif';while(fs>40&&x.measureText(nm).width>W-300){fs-=4;x.font='900 '+fs+'px Cairo,Tahoma,sans-serif'}x.fillText(nm,W/2,720);
 x.fillStyle='#9aa7c2';x.font='600 36px Cairo,Tahoma,sans-serif';x.fillText('أتم الكورسات التالية',W/2,820);
-var nm2=p.s.map(function(k){return A[k][0]}),sep=44,tw=0,ms=nm2.map(function(t){var w=x.measureText(t).width;tw+=w;return w});tw+=sep*(nm2.length-1);
+var nm2=p.s.map(function(k){return fx(A[k][0])}),sep=44,tw=0,ms=nm2.map(function(t){var w=x.measureText(t).width;tw+=w;return w});tw+=sep*(nm2.length-1);
 var rx=W/2+tw/2;x.textAlign='right';nm2.forEach(function(t,i){x.fillStyle='#e8eefc';x.fillText(t,rx,880);rx-=ms[i];if(i<nm2.length-1){x.fillStyle=p.c;x.textAlign='center';x.fillText('•',rx-sep/2,880);x.textAlign='right';rx-=sep}});
 x.textAlign='center';x.fillStyle='#9aa7c2';x.fillText('وأنجز مشروع التخرج الخاص بالمسار',W/2,950);
 x.font='600 30px Cairo,Tahoma,sans-serif';x.fillText(new Date().toLocaleDateString('ar-EG',{year:'numeric',month:'long',day:'numeric'}),W/2,1010);
