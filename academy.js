@@ -128,9 +128,26 @@
   var BD={first_lesson:['🌱','أول درس'],lessons_10:['📘','١٠ دروس'],lessons_50:['📚','٥٠ درس'],lessons_100:['🏅','١٠٠ درس'],explorer:['🧭','مستكشف: ٣ كورسات'],first_cert:['🎓','أول شهادة'],certs_3:['🏆','٣ شهادات'],streak_3:['🔥','٣ أيام ورا بعض'],streak_7:['⚡','أسبوع كامل'],streak_30:['👑','٣٠ يوم ورا بعض']};
   var BDK=['first_lesson','lessons_10','lessons_50','lessons_100','explorer','first_cert','certs_3','streak_3','streak_7','streak_30'];
   var status=null,stT=0;
-  function loadStatus(){if(!acct||HUBMODE)return;var first=!status;rpc('app_my_status',{p_token:acct.token}).then(function(r){if(!r||r.error||!r.streak)return;status=r;ui();checkBadges(r.badges.earned||[]);if(first&&am.style.display==='flex'&&am.querySelector('#iua-sv'))draw('me')})}
+  function loadStatus(){if(!acct||HUBMODE)return;var first=!status;rpc('app_my_status',{p_token:acct.token}).then(function(r){if(!r||r.error||!r.streak)return;status=r;ui();checkBadges(r.badges.earned||[]);if(first&&am.style.display==='flex'&&am.querySelector('#iua-sv'))draw('me');streakReminder()})}
   function schedStatus(){clearTimeout(stT);stT=setTimeout(loadStatus,2500)}
   function checkBadges(e){if(!acct||!acct.user)return;var k='iua-bdg-'+acct.user.username,seen=J(get(k)),n;if(!seen)seen=[];n=e.filter(function(x){return seen.indexOf(x)<0});if(!n.length)return;put(k,JSON.stringify(e));toast('🏅 شارة جديدة!<br>'+n.slice(0,3).map(function(x){return BD[x]?BD[x][0]+' '+BD[x][1]:x}).join(' · '),7000)}
+  /* ---------- daily streak reminder ---------- */
+  function streakReminder(){if(!acct||!status||!status.streak||HUBMODE||gated)return;
+    var sk=status.streak;if(sk.days&&sk.days.indexOf(sk.today)>-1)return;
+    var risk=sk.current>0,tot=(status.badges&&status.badges.lessons)||0;
+    if(!risk&&tot<1)return;
+    var day=sk.today||new Date().toISOString().slice(0,10),rk='iua-rem-'+acct.user.username+'-'+day;
+    if(get(rk))return;
+    var tries=0,iv=setInterval(function(){
+      if(tst.style.display==='block'){if(++tries>40)clearInterval(iv);return}
+      clearInterval(iv);put(rk,'1');
+      var h=risk?'🔥 سلسلتك <b>'+sk.current+'</b> '+(sk.current===1?'يوم':'أيام')+' ورا بعض! خلص درس واحد النهارده عشان ما تقطعش.':'💪 ابدأ سلسلة جديدة النهارده: درس واحد وبتكون بدأت.';
+      tst.innerHTML=h+'<br><button class="p" id="iua-sr1">كمّل دلوقتي</button><button id="iua-sr2">بعدين</button>';tst.style.display='block';
+      var b1=document.getElementById('iua-sr1'),b2=document.getElementById('iua-sr2');
+      b1.onclick=function(){tst.style.display='none';var lid=lastId(),n=lid&&document.querySelector('.nav-item[data-id="'+String(lid).replace(/"/g,'')+'"]');if(n)n.click()};
+      b2.onclick=function(){tst.style.display='none'};
+      setTimeout(function(){if(document.getElementById('iua-sr1'))tst.style.display='none'},25000);
+    },1200)}
   function weekDots(sk){var d=new Date(sk.today+'T12:00:00Z'),h='';for(var i=6;i>=0;i--){var x=new Date(d.getTime()-i*864e5).toISOString().slice(0,10);h+='<i'+(sk.days.indexOf(x)>-1?' class="on"':'')+'></i>'}return h}
   function statusHTML(u){if(!status||!status.streak)return '<p class="s">بنحمّل السلسلة والشارات...</p>';var sk=status.streak,ea=status.badges.earned||[];
     var h='<div class="stk"><div><b>🔥 '+sk.current+'</b><small>'+(sk.current>0?'يوم ورا بعض':'ابدأ سلسلة النهارده')+' · أطول سلسلة '+sk.best+'</small></div><div class="dots" title="آخر ٧ أيام">'+weekDots(sk)+'</div></div><div class="bds">';
