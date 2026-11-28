@@ -1,8 +1,7 @@
-
 var VERIFIED="٢٨ نوفمبر ٢٠٢٦";
 var FIELDS=[["all","الكل"],["data","بيانات"],["ai","ذكاء اصطناعي"],["dev","برمجة وموبايل"],["marketing","تسويق"],["business","أعمال"],["tech","تقنية عامة"]];
 var OPPS=[
-{n:"Microsoft × Sprints Career Launchpad",yrs:[1,2,3,4],o:"Microsoft / Sprints",kind:"منحة تدريب",f:["data","ai","dev","marketing"],st:"dated",dl:"2026-12-31",dlt:"٣١ ديسمبر ٢٠٢٦",fit:"أي سنة دراسية (الصفحة ما حددتش شرط)",d:"منحة ممولة بالكامل وبدون خبرة مطلوبة. المسارات: الذكاء الاصطناعي، UI/UX، التسويق الرقمي، Full-stack، تطوير الموبايل، إدارة المنتجات، تحليل البيانات. المقاعد محدودة والقبول بمراجعة الطلب. لازم تسجّل وتخلّص خلال 2026، فاختار الأقصر لو متأخر (SprintUP حوالي 40 ساعة).",u:"https://www.sprints.ai/en-us/futurepass"},
+{n:"Microsoft × Sprints Career Launchpad",yrs:[],nt:1,o:"Microsoft / Sprints",kind:"منحة تدريب",f:["data","ai","dev","marketing"],st:"dated",dl:"2026-12-31",dlt:"٣١ ديسمبر ٢٠٢٦",fit:"الأهلية مش معلنة على الصفحة الرسمية",d:"منحة ممولة بالكامل وبدون رسوم. المسارات: الذكاء الاصطناعي، UI/UX، التسويق الرقمي، Full-stack، تطوير الموبايل، إدارة المنتجات، تحليل البيانات. المقاعد محدودة والقبول بمراجعة الطلب. لازم تسجّل وتخلّص خلال 2026، فاختار الأقصر لو متأخر (SprintUP حوالي 40 ساعة).",u:"https://www.sprints.ai/en-us/futurepass"},
 {n:"P&G PEAKathon 2026",yrs:[3],o:"P&G مصر",kind:"مسابقة",f:["business","marketing"],st:"dated",dl:"2026-12-25",dlt:"٢٥ ديسمبر ٢٠٢٦",fit:"خريجو يونيو أو ديسمبر 2028 فقط",d:"مسابقة حالة أعمال لفرق من 3 إلى 4 طلبة، وكل عضو يقدم بنفسه ويعمل التقييم الأونلاين. الجولة الثانية في القاهرة الأسبوع التاني من يناير 2027 والنهائي الإقليمي في سنغافورة، وفرصة تسريع التقديم على تدريب P&G.",u:"https://pg.wd5.myworkdayjobs.com/1000/job/CAIRO-BUSINESS-OFFICE/P-G-PEAKathon-2026--The-Ultimate-Student-Business-Challenge--Challenge-Assumptions-Reach-Your-PEAK_R000163437"},
 {n:"BI Intern",yrs:[1,2,3,4],o:"BBI، القاهرة الجديدة",kind:"تدريب",f:["data"],st:"nodl",dl:"",dlt:"مفيش موعد معلن",fit:"طالب جامعي أو خريج حديث في علوم الحاسب أو نظم المعلومات",d:"شغل على داشبوردات Power BI، واستعلامات SQL، وتحليل البيانات مع فريق BI. المطلوب أساس SQL، ومعرفة Power BI ميزة إضافية. اتنشر 16 نوفمبر 2026.",u:"https://bbi.teamtailor.com/jobs/8746995-bi-intern"},
 {n:"Next Gen Catalyst: Assistant Brand Manager",yrs:[1,2,3,4],o:"Beyti Egypt، القاهرة",kind:"تدريب طلابي",f:["business","marketing"],st:"nodl",dl:"",dlt:"مفيش موعد معلن",fit:"طلبة جامعة حاليين أو خريجون جدد، أي سنة دراسية",d:"برنامج Student on Project لمدة 6 شهور من فبراير إلى يوليو 2027، لازم تكون متفرغ طول المدة. تدريب في التسويق وإدارة العلامة التجارية. اتنشر 23 نوفمبر 2026.",u:"https://careers.beyti.eg/job/Cairo-Next-Gen-Catalyst-Program-Assistant-Brand-Manager/1459594833/"},
@@ -33,7 +32,7 @@ function render(){
  var h="";
  L.forEach(function(o){
   var fit=st.c!=="all"&&o.yrs.indexOf(+st.c)>=0,tags='<span class="op-tag">'+o.kind+'</span>';
-  if(!o.yrs.length)tags+='<span class="op-tag warn">بعد التخرج</span>';
+  if(o.nt)tags+='<span class="op-tag warn">الأهلية مش معلنة</span>';else if(!o.yrs.length)tags+='<span class="op-tag warn">بعد التخرج</span>';
   else if(o.yrs.length===4)tags+='<span class="op-tag good">مناسب لكل السنين</span>';
   else tags+='<span class="op-tag good">مناسب للسنة '+YN[o.yrs[0]]+'</span>';
   h+='<article class="op-card'+(fit?' fit':'')+'"><div class="op-tags">'+tags+'</div><h3 dir="auto">'+o.n+'</h3><div class="op-org">'+o.o+'</div><p>'+o.d+'</p><div class="op-meta"><span><b>الموعد:</b> '+o.dlt+'</span><span><b>مين يقدم:</b> '+o.fit+'</span><span><b>اتأكدنا منه:</b> '+VERIFIED+'</span></div><a class="op-btn" href="'+o.u+'" target="_blank" rel="noopener">الصفحة الرسمية<span aria-hidden="true">↗</span></a></article>';
